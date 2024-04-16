@@ -1,0 +1,52 @@
+<mvc:View  xmlns:commons="sap.suite.ui.commons" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+    xmlns:layout="sap.ui.layout" 
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:vizdata="sap.viz.ui5.data"
+    controllerName="sap.btp.charts.controller.View">
+
+    <Page id="page" title="{i18n>title}">
+    <VBox class="sapUiSmallMargin">
+    
+        <viz:VizFrame  id="chartContainer" height="600px" width="100%" >
+            
+        </viz:VizFrame>
+    </VBox>
+    
+    <content>
+        <Table id="productTable" items="{path: 'warehouseTaskData>/', sorter: {path: 'ProductName', descending: false}}">
+            <columns>
+                <Column id="_IDGenColumn0">
+                    <Text id="indexText" text="ActualQuantityInAltvUnit"/>
+                </Column>
+                <Column id="_IDGenColumn1">
+                        <Text  text="TargetQuantityInAltvUnit"/>
+                </Column>
+                <Column id="_IDGenColumn2">
+                        <Text  text="AlternativeUnit"/>
+                </Column>
+                <Column id="_IDGenColumn3">
+                        <Text  text="netto weight"/>
+                </Column>
+                <Column id="_IDGenColumn4">
+                        <Text  text="product name"/>
+                </Column>
+                <Column id="_IDGenColumn5">
+                        <Text  text="Base Unit"/>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem >
+                    <Text text="{warehouseTaskData>ActualQuantityInAltvUnit}"></Text>
+                    <Text text="{warehouseTaskData>TargetQuantityInAltvUnit}"></Text>
+                    <Text text="{warehouseTaskData>AlternativeUnit}"></Text>
+                    <Text text="{warehouseTaskData>NetWeight} {warehouseTaskData>WhseTaskNetWeightUnitOfMeasure}"></Text>
+                    <Text text="{warehouseTaskData>ProductName}"></Text>
+                    <Text text="{warehouseTaskData>BaseUnit}"></Text>
+                </ColumnListItem>
+            </items>
+        </Table> 
+
+    </content>
+    </Page>
+</mvc:View>
