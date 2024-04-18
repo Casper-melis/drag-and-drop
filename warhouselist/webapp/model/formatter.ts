@@ -5,10 +5,10 @@ export default  {
     formatDate: function (this: Controller, date: Date): string | undefined {
 
         if(!date){
-            return '/'
+            return ''
         }
         const dateFormatter = DateFormat.getDateInstance({
-            style: "medium" // Can be 'short', 'medium', 'long', or 'full'
+            style: "long" // Can be 'short', 'medium', 'long', or 'full'
         });
 
         return dateFormatter.format(date);

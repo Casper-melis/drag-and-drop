@@ -1,17 +1,26 @@
-<mvc:View  xmlns:commons="sap.suite.ui.commons" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+<mvc:View xmlns:cards="sap.f.cards" xmlns:f="sap.f"  xmlns:commons="sap.suite.ui.commons" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
     xmlns:layout="sap.ui.layout" 
     xmlns:viz="sap.viz.ui5.controls"
     xmlns:vizdata="sap.viz.ui5.data"
+    xmlns:card ="sap.f.Card"
     controllerName="sap.btp.charts.controller.View">
 
     <Page id="page" title="{i18n>title}">
-    <VBox class="sapUiSmallMargin">
-    
-        <viz:VizFrame  id="chartContainer" height="600px" width="100%" >
+    <f:Card width="700px">
+    <f:header>
+		<cards:Header title="Products in Alt"></cards:Header>
+	</f:header>
+        <f:content>
             
-        </viz:VizFrame>
-    </VBox>
-    
+            <VBox class="sapUiSmallMargin">
+            
+                <viz:VizFrame  id="chartContainer" height="600px" width="100%" >
+                    
+                </viz:VizFrame>
+            </VBox>
+            
+        </f:content>
+    </f:Card>
     <content>
         <Table id="productTable" items="{path: 'warehouseTaskData>/', sorter: {path: 'ProductName', descending: false}}">
             <columns>
